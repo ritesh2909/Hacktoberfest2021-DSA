@@ -1,0 +1,15 @@
+Node* reverse(Node* head)
+{
+  struct Node* curr = head;
+  struct Node* post = head;
+  struct Node* prev = 0;
+  while(post)
+  {
+    post = post->next;
+    curr->next = prev;
+    prev = curr;
+    curr = post;
+  }
+  head = prev;
+  return head;
+}
