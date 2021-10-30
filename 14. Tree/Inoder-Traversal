@@ -1,0 +1,18 @@
+vector<int> v;
+void inorder_traversal(Node* root)
+{
+      if(!root)
+      {
+          return;
+      }
+     inorder_traversal(root->left);
+     v.push_back(root->data);
+     inorder_traversal(root->right);
+}
+
+vector<int> inorder(Node* root)
+{
+    v.clear();
+    inorder_traversal(root);
+    return v;
+}
